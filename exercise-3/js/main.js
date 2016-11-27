@@ -36,15 +36,15 @@ $(function() {
     // enter elements
     rects.enter()
          .append('rect')
-         .attr('width', 0);
-
-    // Entering and updating elements rects
-    rects.transition()
+         .attr('width', 0)
+         .attr('y', function(d){return d.id*40})
+         .attr('x', 20)
+         .attr('height', 30)
+         .merge(rects) // Entering and updating elements rects
+         .transition()
          .duration(500)
          .attr('width', function(d){return d.grade})
-         .attr('y', function(d){return d.id*40})
-         .attr('height', 30)
-         .attr('x', 20);
+
 
     // Transition a remove for exiting elements
     rects.exit()
@@ -59,9 +59,8 @@ $(function() {
     // enter elements
     texts.enter()
          .append('text')
-
-    // Entering and updating elements rects
-    texts.attr('y', function(d){return d.id*40 + 19})
+         .merge(texts) // Entering and updating elements rects
+         .attr('y', function(d){return d.id*40 + 19})
          .text(function(d){return d.student})
          .style("fill", 'white')
          .attr('x', 23);
