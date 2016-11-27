@@ -26,11 +26,12 @@ $(function() {
 
 
   // Use `setTimeout` function to wait 3 seconds, then do the following
-
+  setTimeout(function(){
     // Re-define your variable `paragraphs` by selecting all `p` elements in `myDiv`, and binding the data `people2` to it.
     // Make sure to specify the `name` attribute as an identifying characteristic in your data-join.
 
 
     // Determine which people are no longer represented in the data (`exit`), and transition their opacity to 0 and remove them.
-
+    
+  }, 3000);
 });

@@ -51,9 +51,23 @@ $(function() {
 
 
     // Transition a remove for exiting elements
-    
+    $('button').on('click', function() {
+      var btn = $(this).attr("id");
+      switch(btn){
+        case 'exam-1':
+          draw(exam1);
+          break;
+        case 'exam-2':
+          draw(exam2);
+          break;
+        case 'exam-3':
+          draw(exam3);
+          break;
+        default:
+          break;
+      };
+    })
 
-  // Assign a click event for buttons. Use switch/case to apply logic of which data to use.
 
 
 });
