@@ -83,9 +83,9 @@ var ScatterPlot = React.createClass({
 
         // Update axes
         this.xAxis.scale(this.xScale);
-        this.xAxisG.call(this.xAxis);
+        this.xAxisG.transition().duration(1000).call(this.xAxis);
         this.yAxis.scale(this.yScale);
-        this.yAxisG.call(this.yAxis);
+        this.yAxisG.transition().duration(1000).call(this.yAxis);
     },
     update() {
         this.setScales();
@@ -100,16 +100,25 @@ var ScatterPlot = React.createClass({
 			.attr('cx', (d) => this.xScale(d.x))
             .on('mouseover', this.tip.show)
             .on('mouseout', this.tip.hide)
-			// Transition properties of the enter + update selections
-			.merge(circles)
+            .attr('r', 6)
+            .transition()
+			.duration(1500)
+            .delay((d) => this.xScale(d.x) * 5)
+            .ease(d3.easeBounceIn)
+            .attr('cy', (d) => this.yScale(d.y))
+
+        // Transition properties of the + update selections
+        circles
             .attr('r', function(d) {
                 return d.id.toLowerCase().match(this.props.search) !== null ? 6 : 1
             }.bind(this))
 			.transition()
+            .ease(d3.easeExpIn)
 			.duration(1500)
-			.delay((d) => this.xScale(d.x) * 5)
+            .delay((d) => this.xScale(d.x) * 5)
             .attr('cx', (d) => this.xScale(d.x))
-			.attr('cy', (d) => this.yScale(d.y));
+            .attr('cy', (d) => this.yScale(d.y))
+
         circles.style("color",'green')
 
         // Use the .exit() and .remove() methods to remove elements that are no longer in the data

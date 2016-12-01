@@ -8,7 +8,7 @@ var App = React.createClass({
     getInitialState() {
         return {
             data:[],
-            xVar:'gdp',
+            xVar:'fertility_rate',
             yVar:'life_expectancy',
             idVar:'country',
             search:''
@@ -68,7 +68,7 @@ var App = React.createClass({
                             titles={titles}
                             search={this.state.search}
                             data={chartData}
-                            width={window.innerWidth/2}
+                            width={window.innerWidth * .7}
                             height={window.innerHeight * .9} />
                     </div>
                 }
