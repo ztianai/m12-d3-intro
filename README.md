@@ -40,7 +40,7 @@ d3.select('svg') // selects the element by element type, returns the first svg
   .style('opacity', .5); // sets the opacity, and terminates the chain with a semi-colon
 ```
 
-**Make sure not to interrupt your chain with the `;`**. For practice getting/setting values of attributes/styles, and appending elements to the page, see [exercise-1](exercise-1).
+**Make sure not to interrupt your chain with the `;`**. For practice getting/setting values of attributes/styles, and appending elements to the page, see [exercise-1](http://github.com/info474-s17/m12-d3-intro/tree/master/exercise-1).
 
 ## From Data to DOM
 In order to properly leverage the power of D3, you must understand how it binds data to visual properties. Many of the [resources](#resources) above were selected because of their clear explanations of the core D3 methods. I **strongly suggest** you use them as a supplement to the sections below. The following sections explain the [challenge](#challenge) D3 is designed to address, the [solution](#solution) to the challenge, and the [implications](#implications) of the implementation.
@@ -217,7 +217,7 @@ While this may be a complex solution to the challenges outlined above, it provid
 
 ![animation showing enter exit and update methods](m12-imgs/data-transition.gif)
 
-For practice exploring the data-join, see [exercise-2](exercise-2).
+For practice exploring the data-join, see [exercise-2](http://github.com/info474-s17/m12-d3-intro/tree/master/exercise-2).
 
 ### Implications
 While the above section introduced how D3 provides a set of tools that enable establishing and maintaining the relationship between a data structure and the DOM, this section describes some initial approaches for implementation. There are a few lessons derived from the affordances and limitations of the data-join process:
@@ -282,4 +282,4 @@ var draw = function(data) {
 ```
 This approach will be the basis of more involved reusability patterns in the future. While D3 has a robust set of functionality, the lessons in this module represent the core process you'll need to understand to build your visualizations.
 
-For practice using this pattern, see [exercise-3](exercise-3).
+For practice using this pattern, see [exercise-3](http://github.com/info474-s17/m12-d3-intro/tree/master/exercise-3).
