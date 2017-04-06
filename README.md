@@ -162,7 +162,7 @@ svg.selectAll('circle') // select all circles in the svg
   .attr('r', 5) // set a constant radius of 5
   .attr('cx', function(d) {return d.x}) // specify the x attribute
   .attr('cy', function(d) {return d.y}); // specify the y attribute  
- ```
+```
 
 You'll notice that in the example above, an anonymous function is used to specify the `cx` and `cy` attributes. These functions take in a parameter `d`, which sequentially takes on the value of each element in the `data` array. So, for the first circle, `d` is `{id:1, x:10, y:10}`, so the object properties can be used to specify visual properties (**which is the whole point of the D3 library!**).
 
