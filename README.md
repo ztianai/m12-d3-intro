@@ -153,7 +153,7 @@ By default, the `.data` method returns **the elements present in both the data a
 
 To continue the (seemingly simple) task of adding circles to the screen, we would use the `.enter` method to determine which elements in our data array are not represented on the screen. For each element, we could then use the `.append` method to add a circle and specify attributes using the `.attr` method:
 
- ```javascript
+```javascript
 // Continuing with the above example `data` and selected `svg` element
 svg.selectAll('circle') // select all circles in the svg
   .data(data, function(d){return d.id}) // bind data to your selection
