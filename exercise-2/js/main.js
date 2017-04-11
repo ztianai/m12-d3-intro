@@ -31,7 +31,7 @@ $(function() {
 
   // Use `setTimeout` function to wait 3 seconds, then do the following
   setTimeout(function(){
-    paragraphs = myDiv.selectAll('p')
+    var paragraphs = myDiv.selectAll('p')
                       .data(people2, function(d){return d.name});
     // Re-define your variable `paragraphs` by selecting all `p` elements in `myDiv`, and binding the data `people2` to it.
     // Make sure to specify the `name` attribute as an identifying characteristic in your data-join.
