@@ -39,6 +39,9 @@ $(function() {
 
     // Determine which people are no longer represented in the data (`exit`), and transition their opacity to 0 and remove them.
     paragraphs.exit()
+              .transition()
+              .duration(5000)
+              .style('font-size', '100px')
               .style('opacity', 0)
               .remove();
     
